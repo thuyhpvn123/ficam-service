@@ -1,0 +1,27 @@
+
+MYSQL_URL: "root:password@tcp(127.0.0.1:3306)/email_verification?charset=utf8mb4&parseTime=True&loc=Local"  
+API_PORT: ":8188"
+PrivateKey_: "6f2c7d50eb6241a221a11efe67dabd058986683fcd55ecffbd585066f3132cb5"
+MetaNodeVersion: "0.0.1" 
+
+NodeConnectionAddress: "node" 
+
+StorageAddress: "0xda7284faC5E804F8b9d71Aa39310f0f86776b51d"
+StorageConnectionAddress: "storage"
+
+DnsLink_: "http://34.93.102.218:7777/api/dns/connection-address/"
+
+FicamAddress: "0x971459AC2ebe85BDa501E94645087f5B8F87e367"  
+FicamABIPath: "../abi/ficam"
+
+EmailAdmin : "ooooo@mntos.net"
+TemplateEmailOrderPath : "../public/template.html"
+AWSConfig:
+  Region: "ap-southeast-1"
+  CredentialsConfig:
+    Id: ""
+    SecretKey: ""
+    Token: ""
+  SenderAddress: "thuyaof234@gmail.com"
+  
+

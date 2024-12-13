@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ORDER INFORMATION</title>
+</head>
+<body>
+    <p>Hello {{.Order.ShipInfo.FirstName}},</p>
+    <p>Great! Your payment for order <span style="color:green;">#{{.Order.HexID}}</span> was successful. We are going to send your product soon.</p>
+    <h2>HERE IS YOUR LIST OF ORDERS:</h2>
+    <p>Order ID: <span style="color:green;">#{{.Order.HexID}}</span></p>
+    <p>Order Date: {{.Order.CreateAtDate}}</p>
+    <ul>
+        {{range .Order.Products}}
+        <li>
+            <strong>Product Name:</strong> {{.ProductName}}<br>
+            <strong>Quantity:</strong> {{.Quantity}}<br>
+            <strong>Subscription Type:</strong> 
+            {{if eq .Typ 1}}3-month subscription
+            {{else if eq .Typ 2}}6-month subscription
+            {{else if eq .Typ 3}}12-month subscription
+            {{else}}Sale
+            {{end}}<br>
+            <img src="{{.ImgUrl}}" alt="Product Image" style="width:100px;height:100px;"><br>
+        </li>
+        {{end}}
+    </ul>
+    <p>Order Payment: {{.PaymentOrder}}</p>
+    <p>Shipping Fee: {{.Order.ShippingFee}} </p>
+    <p>____________________________________________</p>
+    <h2>SHIPPING INFORMATION</h2>
+    <p>
+        <strong>First Name:</strong> {{.Order.ShipInfo.FirstName}}<br>
+        <strong>Last Name:</strong> {{.Order.ShipInfo.LastName}}<br>
+        <strong>Email:</strong> {{.Order.ShipInfo.Email}}<br>
+        <strong>Country:</strong> {{.Order.ShipInfo.Country}}<br>
+        <strong>City:</strong> {{.Order.ShipInfo.City}}<br>
+        <strong>State:</strong> {{.Order.ShipInfo.StateOrProvince}}<br>
+        <strong>Postal Code:</strong> {{.Order.ShipInfo.PostalCode}}<br>
+        <strong>Phone:</strong> {{.Order.ShipInfo.Phone}}<br>
+        <strong>Address:</strong> {{.Order.ShipInfo.AddressDetail}}<br>
+    </p>
+</body>
+</html>
